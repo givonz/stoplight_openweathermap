@@ -33,62 +33,89 @@ paths:
                     properties:
                       lon:
                         type: number
+                        description: 'City geo location, longitude'
                       lat:
                         type: number
+                        description: 'City geo location, latitude'
                   cod:
                     type: number
+                    description: Internal parameter
                   name:
                     type: string
+                    description: Name (of city or location)
                   id:
-                    type: string
+                    type: number
+                    description: City ID (a number)
                   timezone:
-                    type: string
+                    type: number
+                    description: the timezone for the station
                   sys:
                     type: object
                     properties:
                       type:
-                        type: string
+                        type: number
+                        description: Internal parameter
                       id:
-                        type: string
+                        type: number
+                        description: Internal parameter
                       country:
                         type: string
+                        description: '‘Country code (GB, JP etc.)’'
                       sunrise:
-                        type: string
+                        type:
+                          - string
+                          - number
+                        description: '‘Sunrise time, unix, UTC’'
                       sunset:
-                        type: string
+                        type:
+                          - string
+                          - number
+                        description: '‘Sunset time, unix, UTC’'
                   dt:
-                    type: string
+                    type: number
+                    description: '‘Time of data calculation, unix, UTC’'
                   clouds:
                     type: object
                     properties:
                       all:
                         type: number
+                        description: '‘Cloudiness, %’'
                   wind:
                     type: object
                     properties:
                       speed:
                         type: number
+                        description: '‘Wind speed. Unit Default: meter/sec, Metric: meter/sec, Imperial: miles/hour.’'
                       degree:
                         type: number
+                        description: '‘Wind direction, degrees (meteorological)’'
                   visibility:
                     type: number
+                    description: '‘Visibility, meter’'
                   main:
                     type: object
                     properties:
                       temp:
                         type: number
+                        description: '‘Temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.’'
                       feels_like:
                         type: number
+                        description: What the weather feels like despite the actual numbers
                       temp_min:
                         type: number
+                        description: '‘Minimum temperature at the moment. This is deviation from current temp that is possible for large cities and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.’'
                       temp_max:
                         type: number
+                        description: '‘Maximum temperature at the moment. This is deviation from current temp that is possible for large cities and megalopolises geographically expanded (use these parameter optionally). Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit.’'
                       pressure:
                         type: number
+                        description: '‘Atmospheric pressure (on the sea level, if there is no sea_level or grnd_level data), hPa’'
                       humidity:
                         type: number
+                        description: '‘Humidity, %’'
                   base:
                     type: string
+                    description: Internal parameter
                   weather:
                     type: array
                     items:
@@ -96,12 +123,16 @@ paths:
                       properties:
                         id:
                           type: number
+                          description: Weather condition id
                         main:
                           type: string
+                          description: '‘Group of weather parameters (Rain, Snow, Extreme etc.)’'
                         description:
                           type: string
+                          description: Weather condition within the group
                         icon:
                           type: string
+                          description: Weather icon id
       operationId: get-weather
       description: 'Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations.'
       parameters:
