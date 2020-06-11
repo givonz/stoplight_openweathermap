@@ -27,7 +27,81 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: {}
+                properties:
+                  coord:
+                    type: object
+                    properties:
+                      lon:
+                        type: number
+                      lat:
+                        type: number
+                  cod:
+                    type: number
+                  name:
+                    type: string
+                  id:
+                    type: string
+                  timezone:
+                    type: string
+                  sys:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                      id:
+                        type: string
+                      country:
+                        type: string
+                      sunrise:
+                        type: string
+                      sunset:
+                        type: string
+                  dt:
+                    type: string
+                  clouds:
+                    type: object
+                    properties:
+                      all:
+                        type: number
+                  wind:
+                    type: object
+                    properties:
+                      speed:
+                        type: number
+                      degree:
+                        type: number
+                  visibility:
+                    type: number
+                  main:
+                    type: object
+                    properties:
+                      temp:
+                        type: number
+                      feels_like:
+                        type: number
+                      temp_min:
+                        type: number
+                      temp_max:
+                        type: number
+                      pressure:
+                        type: number
+                      humidity:
+                        type: number
+                  base:
+                    type: string
+                  weather:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        main:
+                          type: string
+                        description:
+                          type: string
+                        icon:
+                          type: string
       operationId: get-weather
       description: 'Access current weather data for any location on Earth including over 200,000 cities! Current weather is frequently updated based on global models and data from more than 40,000 weather stations.'
       parameters:
