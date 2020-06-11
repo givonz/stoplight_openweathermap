@@ -253,6 +253,6 @@ components:
         - message
   securitySchemes:
     API Key - 1:
-      name: API Key
+      name: appid
       type: apiKey
       in: query
